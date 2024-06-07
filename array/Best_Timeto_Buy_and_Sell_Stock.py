@@ -8,6 +8,7 @@
 # Output: 0
 # Explanation: Since the array is in decreasing order, no possible way exists to solve the problem.
 
+# complexity O(n^2)
 def chkStockPrice(a):
     minPrice = a[0]
     maxPrice = 0
@@ -21,6 +22,28 @@ def chkStockPrice(a):
             maxPrice = a[j]
     return maxPrice - minPrice
 
-a = [7, 6, 4, 3, 1]
-a1 = [7, 1, 5, 3, 6, 4]
-print(chkStockPrice(a))
+
+# complexity O(n)
+def maxProfit(prices, n):
+    buy = prices[0] # buy = 7
+    max_profit = 0
+    for i in range(1, n):
+
+        # Checking for lower buy value
+        if (buy > prices[i]): 
+            buy = prices[i]
+
+        # Checking for higher profit
+        elif (prices[i] - buy > max_profit):
+            max_profit = prices[i] - buy
+    return max_profit
+
+
+# Driver code
+if __name__ == '__main__':
+                    
+    prices = [7, 1, 5, 6, 4]
+    n = len(prices)
+    max_profit = maxProfit(prices, n)
+    print(max_profit)
+    print(chkStockPrice(prices))
