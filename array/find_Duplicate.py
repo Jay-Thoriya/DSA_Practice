@@ -20,4 +20,5 @@ a = [1, 2, 3, 6, 3, 6, 1]
 n = 7
 a1 = [1, 2, 3, 4 ,3]
 n1 = 5
+print(find_Duplicate(a,n))            
 print(find_Duplicate(a1,n1))            
