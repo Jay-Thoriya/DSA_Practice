@@ -16,15 +16,17 @@ Output: Minimum Difference is 10
 
 def chocolate_intervals(a,m):
     a.sort()
-    min_val = a[-1]
+    min_val = a[len(a)-1] - a[0]
     for i in range(len(a)-m+1):
-        elements = a[i:i+m]
-        max_ele = max(elements)
-        min_ele = min(elements)
+        # elements = a[i:i+m]
+        # max_ele = max(elements)
+        # min_ele = min(elements)
 
-        if(min_val > max_ele - min_ele):
-            min_val = 0
-            min_val = max_ele - min_ele
+        # if(min_val > max_ele - min_ele):
+        #     min_val = 0
+        #     min_val = max_ele - min_ele
+
+        min_val = min(min_val , a[i+m-1] - a[i])
     return min_val
 
 a = [7, 3, 2, 4, 9, 12, 56]
